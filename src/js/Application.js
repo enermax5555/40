@@ -12,5 +12,13 @@ export default class Application extends EventEmitter {
     this.init();
     this.emit(Application.events.READY);
   }
-  init() {}
+  init() {
+	  document.querySelector('article').addEventListener('click', (me) => {
+	  anime({
+		targets: 'article.article',
+		easing: 'spring',
+		loop: 'true'
+	  });
+	  })
+  }
 }
